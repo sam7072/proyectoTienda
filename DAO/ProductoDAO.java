@@ -1,4 +1,4 @@
-package Modelos;
+package DAO;
 
 import Config.Conexion;
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package ModeloDAO;
+package DAO;
 
 import Modelo.Usuario;
 import java.sql.PreparedStatement;

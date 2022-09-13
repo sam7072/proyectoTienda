@@ -14,7 +14,7 @@
                 <div>
                     <form method="post" action="controlUser?action=validar">
                         <h3 class=text-center>Iniciar sesión</h3>
-                        <label>Nombre de usuario</label>
+                        <label>Nombre del cliente</label>
                         <input type="text" class="form-control" name="txtUser" placeholder="Usuario" required=""/>
                         ${msjUser}
                         <br/>

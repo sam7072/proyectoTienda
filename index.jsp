@@ -19,18 +19,39 @@
     </head>
     <body>
         <main>
+
+            <div style="width: 400px">
+                <img src="" alt="logo"/>
+            </div>
+            <div style="width: 400px">
+                <div>
+                    <form method="post" action="controlUser?action=validar">
+                        <h3 class=text-center>Iniciar sesiÃ³n</h3>
+                        <label>Nombre del cliente</label>
+                        <input type="text" class="form-control" name="txtUser" placeholder="Usuario" required=""/>
+                        ${msjUser}
+                        <br/>
+                        <label>ContraseÃ±a</label>
+                        <input type="password" class="form-control" name="txtPass" required=""/>
+                        ${msjPass}
+                        <br />
+                        <div>
+                            ${msjTodo}
+                            <input type="submit" value="Ingresar"/>
+
             <div id="contenedor">
                 <div id="central">
                     <div id="login">
                         <div class="titulo">
                             Bienvenido
+
                         </div>
                         <form id="loginform" method="post" action="controlUser?action=validar">
                             <label>Nombre de usuario</label>
                             <input type="text" class="form-control" name="txtUser" placeholder="Usuario" required=""/>
                             ${msjUser}
                             <br/>
-                            <label>Contrase�a</label>
+                            <label>Contraseña</label>
                             <input type="password" class="form-control" name="txtPass" required=""/>
                             ${msjPass}
                             <br />

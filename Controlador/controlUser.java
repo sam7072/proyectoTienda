@@ -29,15 +29,22 @@ public class controlUser extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String ruta = "";
         String action = request.getParameter("action");
-        switch (action) {
-            case "validar":
-                ruta = "./vista/home.jsp";
+         if (action.equalsIgnoreCase("validar")) {
+            ruta = "./vista/home.jsp";
                 try {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 this.validar(request, response, ruta);
-                break;
+        } else if (action.equalsIgnoreCase("cerrar")) {
+            ruta = "index.jsp";
+            try {
+                HttpSession sesion = request.getSession();
+                sesion.invalidate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
     

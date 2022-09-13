@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/controlProd")
+@WebServlet("/control")
 public class control extends HttpServlet {
 
     ProductoDAO prodDAO;
 
 
-    public controlProd() {
+    public control() {
         super();
         prodDAO = new ProductoDAO();
 
@@ -29,15 +29,8 @@ public class control extends HttpServlet {
         String ruta = "";
         String action = request.getParameter("action");
 
-            if (action.equalsIgnoreCase("inicio")) {
+        if (action.equalsIgnoreCase("productos")) {
             ruta = "./vista/home.jsp";
-            try {
-                request.setAttribute("base", prodDAO.listarProductos());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }      
-        } else if (action.equalsIgnoreCase("productos")) {
-            ruta = "./vista/datos.jsp";
             try {
                 request.setAttribute("base", prodDAO.llenarProductos());
             } catch (Exception e) {
@@ -51,7 +44,7 @@ public class control extends HttpServlet {
                 e.printStackTrace();
             }
         } else if (action.equalsIgnoreCase("eliminar")) {
-            ruta = "./vista/datos.jsp";
+            ruta = "./vista/home.jsp";
             try {
                 int idEliminar = Integer.parseInt(request.getParameter("id"));
                 prodDAO.Eliminar(idEliminar);
